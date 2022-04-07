@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <title>Conway's Game of Life</title>
+    <meta charset="UTF-8">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+<body>
+
+<div class="container-fluid">
+    <div id="wrapper" class="controls-row">
+
+        <header class="col-md-4">
+
+            <div>
+                <h1>Conway's Game of Life</h1>
+                <h3>Black cells are alive.</h3>
+                <h3>White cells are dead.</h3>
+                <h3>Click a cell to change it!</h3>
+                <hr/>
+                <h3>Rules:</h3>
+                <ul>
+                    <li>Any live cell with fewer than two live neighbours dies, as if by underpopulation.</li>
+                    <li>Any live cell with two or three live neighbours lives on to the next generation.</li>
+                    <li>Any live cell with more than three live neighbours dies, as if by overpopulation.</li>
+                    <li>Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.</li>
+                </ul>
+                <hr/>
+            </div>
+
+            <div id="controls">
+                <form class="controls-row">
+                    <div class="col-xs-12">
+                        <label for="num-cols">Columns:</label> <input id="num-cols" type="number" name="columns" min="5" max="99">
+                        <label for="num-rows">Rows:</label> <input id="num-rows" type="number" name="rows" min="5" max="99">
+                        <button type="button" name="set" onclick="setBoard(parseInt(columns.value), parseInt(rows.value))">
+                            Set Board
+                        </button>
+                    </div>
+                </form>
+                <div class="controls-row">
+                    <div class="col-xs-12">
+                        <button type="button" name="clear" onclick="clearBoard()">Clear Board</button>
+                    </div>
+                </div>
+                <div id="main-buttons">
+                    <div class="controls-row">
+                        <div class="col-xs-12">
+                            <button type="button" name="evolve" onclick="updateBoard()">Next Generation</button>
+                        </div>
+                    </div>
+                    <div class="controls-row">
+                        <div class="col-xs-12">
+                            <button type="button" name="auto-evolve" onclick="toggleEvolve(this)" value="stopped" id="auto-evolve-button">
+                                Auto-Evolve
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p>
+                Made by <a href="https://github.com/luke-myers1014">Luke Myers</a>
+            </p>
+
+        </header>
+
+        <main class="col-md-8">
+            <div id="board">
+                <!-- cells will be generated here -->
+            </div>
+        </main>
+
+    </div> <!-- row -->
+</div> <!-- container -->
+
+<script src="gameOfLife.js"></script>
+
+</body>
+</html>

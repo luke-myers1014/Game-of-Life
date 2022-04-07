@@ -1,0 +1,90 @@
+body {
+    font-family: sans-serif;
+    background-color: white;
+    color: black;
+}
+
+header {
+    margin-top: 5vh;
+    text-align: center;
+}
+
+main {
+    margin-top: 5vh;
+}
+
+hr {
+    height:2px;
+    background-color:gray;
+}
+
+ul {
+    text-align: left;
+}
+
+h1 {
+    color: green;
+    font-size: 2.5em;
+}
+
+p {
+    margin-top: 10vh;
+}
+
+button {
+    background-color: green;
+    color: white;
+    border: 2px solid green;
+    border-radius: 7px;
+    margin: 5px;
+}
+
+button:active {
+    background-color:white;
+    color: green;
+}
+
+#controls {
+    padding-top:5vh;
+    text-align:center;
+}
+
+#controls .controls-row {
+    padding: 1vh 0;
+}
+
+#main-buttons {
+    font-size:1.5em;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+}
+
+#auto-evolve-button {
+    font-size: 1.5em;
+}
+
+#main-buttons .slider {
+    font-size:.75em;
+}
+
+#board {
+    background-color: white;
+    margin: 0 auto;
+    height: 90vh;
+    max-width: 90%;
+    padding: 2px;
+    border: 5px solid green;
+}
+
+.board-row {
+    overflow: auto;
+}
+
+.cell {
+    float:left;
+    border: 1px solid;
+}
+
+.alive {
+    background-color: black;
+}
